@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+}
+
+img {
+    width: 100%;
+    border: solid white 5px;
+    border-radius: 10px;
+}
+
+div {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 100px;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-family: "mlb blue jays";
+}
+
+p {
+    color: white;
+    text-align: center;
+}
