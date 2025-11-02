@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox Pricing Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap"
+      rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+
+      :root {
+        --bg-color:  rgb(244, 244, 244);
+        --subscription-one: linear-gradient(to right bottom, #dccd2a, #dbb125, #e28737, #d77716, #da6130,  #e4405e, #e33578, #d22c6c, #d22c6c, #d22c6c, #d22c6c, #d22c6c);
+        --subscription-two: linear-gradient(to right bottom, #57d1f0, #4bc0e2, #349abc, #2685a8, #1c7598, #1b7094, #1a6185, #145b81, #115278, #0f486e, #0e456f, #0f3d65);
+        --subscription-three: linear-gradient(to right bottom, #9dd09b, #89cb9f, #76c5a4, #63bfa8, #52b8ad, #42b2b1, #32acb4, #25a5b7, #139eba, #0997bb, #148fbc, #2587bb);
+      }
+
+      body {
+        font-family: poppins;
+      }
+
+      .pricing-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        /* background-image: url(./overlayimg.jpg); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+      }
+
+      .pricing-plan {
+        position: relative;
+        background-color: var(--bg-color);
+        margin: 30px;
+        padding: 30px 20px 40px 20px;
+        border-radius: 25px;
+        height: 30rem;
+        width: 15rem;
+        box-shadow: 0px 0px 10px 10px rgb(95, 92, 92);
+      }
+
+      .pricing-plan.grow {
+        transition: all .2s ease-in-out;
+      }
+
+      .pricing-plan:hover {
+        transform: scale(1.1);
+        transition-duration: 0.4s;
+      }
+
+     .premium-plan {
+        position: relative;
+        background-color: var(--bg-color);
+        margin: 20px;
+        padding: 30px 20px 40px 20px;
+        border-radius: 25px;
+        height: 33rem;
+        width: 17rem;
+        box-shadow: 0px 0px 10px 10px rgb(95, 92, 92);
+        transition: all .2s ease-in-out;
+     }
+
+     .premium-plan:hover {
+        box-shadow: 0px 0px 10px 10px rgb(100, 183, 178);
+     }
+
+     .standard-plan:hover {
+        box-shadow: 0px 0px 10px 10px rgb(26, 115, 179);
+     }
+
+      .plan-title {
+        position: absolute;
+        width: 100%;
+        margin-left: -20px;
+        margin-top: -30px;
+        border-radius: 25px 25px 0 0;
+        align-content: center;
+        text-align: center;
+        height: 100px;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 5px;
+      }
+
+      .plan-one {
+        background-image: var(--subscription-one)
+
+      }
+
+      .plan-two {
+        background-image: var(--subscription-two)
+      }
+      
+      .plan-three {
+        background-image: var(--subscription-three);
+        position: absolute;
+        width: 100%;
+        margin-left: -20px;
+        margin-top: -30px;
+        border-radius: 25px 25px 0 0;
+        align-content: center;
+        text-align: center;
+        height: 100px;
+        color: white;
+        font-size: 1.75rem;
+        font-weight: bold ;
+        letter-spacing: 2px;
+      }
+ 
+      /* 
+      THIS IS THE DOLLAR SIGN ----------------
+            |
+            v
+      */
+      .plan-price {
+        position: relative;
+        margin-top: 120px;
+        margin-left: 0.75rem;
+        font-size: 2.75rem;
+        width: fit-content
+      }
+
+      .plan-price1 {
+        position: relative;
+        margin-top: 120px;
+        margin-left: 1.5rem;
+        font-size: 2.75rem;
+        width: fit-content
+      }
+
+      .plan-price-premium{
+        position: relative;
+        margin-top: 120px;
+        margin-left: 1.25rem;
+        font-size: 2.75rem;
+        width: fit-content
+      }
+
+      /* Subscription 2 and 3 */
+
+      .number {
+        position: absolute;
+        margin-left: 2.8rem;
+        margin-top: -55px;
+        font-family: "poppins";
+        font-size: 3.75rem;
+        font-weight: 600;
+      }
+
+      .num-premium {
+        position: absolute;
+        margin-left: 3.4rem;
+        margin-top: -55px;
+        font-family: "poppins";
+        font-size: 4rem;
+        font-weight: 600;
+      }
+
+     /* Subscription 1 */
+      .num {
+        position: absolute;
+        margin-left: 3.75rem;
+        margin-top: -55px;
+        font-family: "poppins";
+        font-size: 3.75rem;
+        font-weight: 600;
+      }
+
+      /* this is the style for the month beside the price*/
+      .allmonth {
+        position: absolute;
+        font-size: 1rem;
+        font-weight: 300;
+      }
+
+      .month {margin-left: 12rem;}
+      .month1 {margin-left: 12.5rem;}
+      .month2 {margin-left: 15rem; margin-top: 3px; }
+
+      .plan-features {
+        position: absolute;
+        margin-top: 100px;
+        margin-left: -10px;
+        list-style-type: none;
+      }
+
+      .fpremium {
+        position: absolute;
+        margin-top: 100px;
+        margin-left: 3px;
+        list-style-type: none;
+        font-size: 1.15rem;
+
+      }
+
+     .plan-features li {
+      margin-bottom: 10px;
+
+     }
+
+     .plan-button {
+      position: absolute;
+      padding: 10px 25px 10px 25px;
+      border-color: transparent;
+      border-radius: 10px;
+      color: white;
+      text-transform: capitalize;
+      margin-top: 220px;
+      margin-left: 4rem;
+     }
+    
+     .btn1 {
+      background-image: var(--subscription-one);
+     }
+
+     .btn2 {
+      background-image: var(--subscription-two);
+     }
+
+     .btn3 {
+      background-image: var(--subscription-three);
+      position: absolute;
+      padding: 10px 25px 10px 25px;
+      border-color: transparent;
+      border-radius: 10px;
+      color: white;
+      text-transform: capitalize;
+      margin-top: 16rem;
+      margin-left: 4.25rem;
+      font-size: 1.3rem;
+     }
+
+      /* this is the style for the slanted line at the right side of the price*/
+     .hline {
+       transform: rotate(-50deg);
+       width: 25px;
+       background-color: black;
+       height: 1px;
+       position: absolute;
+       margin-top: 6px;
+     }
+
+     .rline1 {margin-left: 11rem;}
+     .rline2 {margin-left: 11.2rem;}
+     .rline3 {margin-left: 14rem;}
+
+   /* this is the style for the line below the price*/
+     .line {
+       position: absolute;
+       margin-top: 60px;
+       margin-left: 4.5rem;
+       width: 100px;
+     }
+
+     .linepremium {
+       position: absolute;
+       margin-top: 60px;
+       margin-left: 5.25rem;
+       width: 100px;
+     }
+
+
+     /* .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #0000008a;
+      z-index: -1;
+     } */
+
+     .checkmark {
+      border-radius: 50%;
+      border: none;
+      padding: 1px 5px 1px 5px;
+      margin: 0px;
+      color: white;
+      margin-right: 5px;
+     }
+
+     .mark1 {background-image: var(--subscription-one);}
+     .mark2 {background-image: var(--subscription-two);}
+     .mark3 {background-image: var(--subscription-three);}
+
+      /* Hint: What can you do with a media query and flexbox? */
+      @media (max-width: 1250px) {
+       .pricing-container {
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        margin-bottom: 20px;
+       }
+
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="pricing-container">
+      <div class="pricing-plan">
+        <div class="plan-title plan-one">BASIC</div>
+         <div class="plan-price1">&#65284</div>
+         <div class="num">9.99</div>
+         <hr class="hline rline1"/>
+         <hr class="line"/>
+         <div class="month allmonth">mo</div>
+            <ul class="plan-features">
+              <li><button class="checkmark mark1">&#10003</button>  100 GB Storage</li>
+              <li><button class="checkmark mark1">&#10003</button>  2 Users</li>
+              <li><button class="checkmark mark1">&#10003</button>  Email Support</li>
+           </ul>
+              <a class="plan-button btn1">Buy Now</a>
+      </div>
+
+      <div class="pricing-plan premium-plan">
+        <div class="plan-title plan-three">PREMIUM</div>
+          <div class="plan-price plan-price-premium">&#65284</div>
+          <div class="number num-premium">34.99</div>
+          <hr class="hline rline3"/>
+          <hr class="linepremium"/>
+          <div class="month2 allmonth">mo</div>
+             <ul class="plan-features fpremium">
+               <li><button class="checkmark mark3">&#10003</button>  1 TB Storage</li>
+               <li><button class="checkmark mark3">&#10003</button>  10 Users</li>
+               <li><button class="checkmark mark3">&#10003</button>  24/7 Support</li>
+               <li><button class="checkmark mark3">&#10003</button>  Premium Features</li>
+            </ul>
+                <a class="plan-button btn3">Buy Now</a>
+       </div>
+
+      <div class="pricing-plan standard-plan">
+        <div class="plan-title plan-two">STANDARD</div>
+         <div class="plan-price">&#65284</div>
+         <div class="number">16.99</div>
+         <hr class="hline rline2"/>
+         <hr class="line"/>
+         <div class="month1 allmonth">mo</div>
+            <ul class="plan-features">
+             <li><button class="checkmark mark2">&#10003</button>  500 GB Storage</li>
+             <li><button class="checkmark mark2">&#10003</button>  5 Users</li>
+             <li><button class="checkmark mark2">&#10003</button>  Phone &amp; Email Support</li>
+           </ul>
+             <a class="plan-button btn2">Buy Now</a>
+      </div>
+       <div class="overlay"></div>
+    </div>
+  </body>
+</html>
